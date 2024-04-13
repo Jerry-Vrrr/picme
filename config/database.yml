@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+
+development:
+  <<: *default
+  database: spotify_artists
+  username: jerryvohrer0928
+  password: cmr!zJEMS!Xyn6B
+
+test:
+  <<: *default
+  database: picme_artists_api_test
+
+production:
+  adapter: postgresql
+  host: pic-me-14217.7tt.aws-us-east-1.cockroachlabs.cloud
+  port: 26257
+  database: defaultdb
+  username: jerry
+  password: O69AhCM-In5mLdOgqDjOEw
+  sslmode: verify-full
